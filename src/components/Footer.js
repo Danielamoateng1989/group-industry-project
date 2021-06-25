@@ -9,7 +9,7 @@ const Footer = () => {
                 <Row>
                     <Col className="text-center py-3">
 
-                     Copyright &copy; Self.
+                     Copyright &copy; Self. Created by Daniel, Andy and Kwaku
                     </Col> 
                 </Row>
             </Container>
