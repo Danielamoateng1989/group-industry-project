@@ -49,34 +49,57 @@ main {
 
 
 /* Add a black background color to the top navigation */
-.nav-right {
+.nav-left {
   background-color:#63aef7;
   overflow: hidden;
-  height: 90px;
+  height: 80px;
 }
 
 /* Style the links inside the navigation bar */
-.nav-right a {
-  float: right;
+.nav-left a {
+  float: left;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  margin-top: 20px;
+  margin-top: 15px;
+  font-weight: bold
 }
 
 /* Change the color of links on hover */
-.nav-right a:hover {
-  background-color: #ddd;
+.nav-left a:hover {
+  background-color: white;
   color:#63aef7;
    border-radius: 10px;
+   font-weight: bold
 }
 
 /* Add a color to the active/current link */
-.nav-right a.active {
-  background-color: #E37D03;
-  color: white;
+.nav-left a.active {
+ color: white;
   border-radius: 40px;
+  font-weight: bold;
 }
 
+
+.nav-right a{
+  float: right;
+   color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-top: -65px;
+  font-weight: bold;
+  background-color: #E37D03;
+  border-radius: 40px;
+  font-size: small;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
