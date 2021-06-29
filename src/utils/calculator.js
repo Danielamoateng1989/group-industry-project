@@ -27,7 +27,7 @@ const calculator = (calculationOptions) => {
       let accountSavings = postRoi / 100 * savingsBalance
       let totalSavings = accountSavings
       totalIncome = 0
-      withdrawal = incomeRetirementPercent / 100 * parseFloat(finalSavingsArray[i-1].income)
+      withdrawal = incomeRetirementPercent / 100 * parseFloat(finalSavingsArray['income'][i-1])
       withdrawal += (withdrawal * inflation / 100)
       let totalBalance = savingsBalance + totalSavings - withdrawal
       let returnObject = {
@@ -42,7 +42,7 @@ const calculator = (calculationOptions) => {
       savingsBalance = totalBalance
       currentAge += 1
     } else
-    if (currentAge >= retirementAge) {
+    if (currentAge > retirementAge) {
 
       let accountSavings = postRoi / 100 * savingsBalance
       let totalSavings = accountSavings
