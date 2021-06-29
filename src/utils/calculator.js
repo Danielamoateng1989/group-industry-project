@@ -20,27 +20,45 @@ const calculator = (calculationOptions) => {
   let isRetired = (currentAge <= retirementAge) ? false : true;
   let totalIncome = isRetired ? 0 : income + spouseIncome;
   let savingsBalance = amountSaved;
-  let firstWithdrawal = (currentAge === retirementAge) ? incomeRetirementPercent / 100 * totalIncome : 0;
   let withdrawal = 0;
 
   for (let i = startAge - 1; i < totalYears; i++) {
-    if (currentAge >= retirementAge) {
-
-      totalIncome = 0
+    if (currentAge === retirementAge) {
       let accountSavings = postRoi / 100 * savingsBalance
       let totalSavings = accountSavings
-      withdrawal = incomeRetirementPercent / 100 * firstWithdrawal
-      let totalBalance = savingsBalance + totalSavings - firstWithdrawal - withdrawal
+      totalIncome = 0
+      withdrawal = incomeRetirementPercent / 100 * parseFloat(finalSavingsArray[i-1].income)
+      withdrawal += (withdrawal * inflation / 100)
+      let totalBalance = savingsBalance + totalSavings - withdrawal
       let returnObject = {
         startingSavings: savingsBalance,
         age: currentAge,
         yearlySavings: accountSavings,
+        withdrawal: withdrawal,
         endingSavings: totalBalance
       }
 
       finalSavingsArray.push(returnObject)
       savingsBalance = totalBalance
-      withdrawal = ((firstWithdrawal + withdrawal) * inflation / 100) + (firstWithdrawal + withdrawal)
+      currentAge += 1
+    } else
+    if (currentAge >= retirementAge) {
+
+      let accountSavings = postRoi / 100 * savingsBalance
+      let totalSavings = accountSavings
+      withdrawal += (withdrawal * inflation / 100)
+      withdrawal = incomeRetirementPercent / 100 * withdrawal
+      let totalBalance = savingsBalance + totalSavings - withdrawal
+      let returnObject = {
+        startingSavings: savingsBalance,
+        age: currentAge,
+        yearlySavings: accountSavings,
+        withdrawal: withdrawal,
+        endingSavings: totalBalance
+      }
+
+      finalSavingsArray.push(returnObject)
+      savingsBalance = totalBalance
       currentAge += 1
     } else {
       let incomeSavings = savingsRate / 100 * totalIncome;
@@ -61,7 +79,6 @@ const calculator = (calculationOptions) => {
       savingsBalance = totalBalance
       totalIncome += salaryIncrease / 100 * totalIncome
       currentAge += 1
-      withdrawal = firstWithdrawal
     }
   }
 
