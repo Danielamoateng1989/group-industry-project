@@ -9,21 +9,12 @@ function App() {
   return (
     <>
       <Header />
-      
-      
         <main>
       <Container>
-     
         <Main/>
         <Graph />
-     
-     
      </Container>
-
-
         </main>
-      
-
       <Footer />
       
     </>

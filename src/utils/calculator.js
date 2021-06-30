@@ -11,13 +11,32 @@ const canRetire = (calculationOptions, arr) => {
     preRoi,
     postRoi,
     incomeRetirementPercent,
-    salaryIncrease
+    salaryIncrease,
+    enoughMoneyToRetire = "You are currently saving enough money for retirement",
+    notEnoughMoneyToRetire ="You are not currently saving enough for retirement. Please try to increase your savings amount"
     } = calculationOptions
+   
+    const warningStyle = {
+      color: "#E37D04",
+      padding: "10px",
+      fontFamily: "Monaco",
+      border: "1px solid",
+      borderRadius: "10px",
+      marginTop: "30px"
+    };
+    const goodStyle = {
+      color: "green",
+      padding: "10px",
+      fontFamily: "",
+      border: "1px solid",
+      borderRadius: "10px",
+      marginTop: "30px"
+    };
 
   if (retirementAge + yearsRetired >= arr[retirementAge + yearsRetired - startAge - 1].age && arr[retirementAge + yearsRetired - startAge - 1].endingSavings >= 0) {
-    return "you are currently saving enough money for retirement"
+    return <p style={goodStyle}>{enoughMoneyToRetire}</p>
   } else {
-    return "you are not currently saving enough for retirement. Please try to increase your savings amount"
+    return <p style={warningStyle}>{notEnoughMoneyToRetire}</p>
   }
   
 }
@@ -122,4 +141,4 @@ console.log(calculator({
   }
 ))
 
-export default calculator
+export {calculator, canRetire}

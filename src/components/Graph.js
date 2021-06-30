@@ -1,6 +1,6 @@
 
 import { Bar } from "react-chartjs-2"
-import calculator from '../utils/calculator'
+import {calculator}from '../utils/calculator'
 
 const Graph = () => {
     const dummyData = {
@@ -43,6 +43,7 @@ const Graph = () => {
     }}>
       </Bar>
       <h1 className="retirementCheck">{ formattedData.retirementCheck }</h1>
+      
     </>
 )
 
