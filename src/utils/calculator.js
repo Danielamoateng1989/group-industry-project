@@ -1,3 +1,27 @@
+const canRetire = (calculationOptions, arr) => {
+  const { 
+    startAge, 
+    income, 
+    spouseIncome, 
+    amountSaved, 
+    retirementAge, 
+    yearsRetired, 
+    savingsRate,
+    inflation,
+    preRoi,
+    postRoi,
+    incomeRetirementPercent,
+    salaryIncrease
+    } = calculationOptions
+
+  if (retirementAge + yearsRetired >= arr[retirementAge + yearsRetired - startAge - 1].age && arr[retirementAge + yearsRetired - startAge - 1].endingSavings >= 0) {
+    return "you are currently saving enough money for retirement"
+  } else {
+    return "you are not currently saving enough for retirement. Please try to increase your savings amount"
+  }
+  
+}
+
 const calculator = (calculationOptions) => {
   const { 
     startAge, 
@@ -22,7 +46,7 @@ const calculator = (calculationOptions) => {
   let savingsBalance = amountSaved;
   let withdrawal = 0;
 
-  for (let i = startAge - 1; i < totalYears; i++) {
+  for (let i = 0; i < totalYears - startAge; i++) {
     if (currentAge === retirementAge) {
       let accountSavings = postRoi / 100 * savingsBalance
       let totalSavings = accountSavings
@@ -86,8 +110,9 @@ const calculator = (calculationOptions) => {
       currentAge += 1
     }
   }
-
-  return finalSavingsArray
+  
+  const retirementCheck = canRetire(calculationOptions, finalSavingsArray)
+  return { finalSavingsArray, retirementCheck }
 }
 
 console.log(calculator({
@@ -95,4 +120,4 @@ console.log(calculator({
   }
 ))
 
-// export default calculator
+export default calculator
