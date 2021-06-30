@@ -1,8 +1,17 @@
 import { Container} from "react-bootstrap"
+import React, { useState, useEffect } from "react"
 
 
 
 const Main = () => {
+let defaultCalcOptions = {
+
+}
+
+//let setSavingsArray = props.setterFunction
+
+// let [calcOptions, setCalcOptions] = useState([defaultCalcOptions])
+
     return (
         <Container className="App">
         
@@ -16,6 +25,7 @@ const Main = () => {
          <button className="button">Calculate</button>
         </Container>
     )
+
 }
 
 export default Main

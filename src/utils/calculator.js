@@ -26,38 +26,42 @@ const calculator = (calculationOptions) => {
     if (currentAge === retirementAge) {
       let accountSavings = postRoi / 100 * savingsBalance
       let totalSavings = accountSavings
+      totalIncome = totalIncome / (1 + salaryIncrease / 100)
+      totalIncome += inflation / 100 * totalIncome
+      withdrawal = incomeRetirementPercent / 100 * totalIncome
       totalIncome = 0
-      withdrawal = incomeRetirementPercent / 100 * parseFloat(finalSavingsArray['income'][i-1])
-      withdrawal += (withdrawal * inflation / 100)
       let totalBalance = savingsBalance + totalSavings - withdrawal
       let returnObject = {
-        startingSavings: savingsBalance,
+        startingSavings: savingsBalance.toFixed(2),
         age: currentAge,
-        yearlySavings: accountSavings,
-        withdrawal: withdrawal,
-        endingSavings: totalBalance
+        income: totalIncome.toFixed(2),
+        yearlySavings: accountSavings.toFixed(2),
+        withdrawal: withdrawal.toFixed(2),
+        endingSavings: totalBalance.toFixed(2)
       }
 
       finalSavingsArray.push(returnObject)
       savingsBalance = totalBalance
+      withdrawal += (withdrawal * inflation / 100)
       currentAge += 1
     } else
     if (currentAge > retirementAge) {
 
       let accountSavings = postRoi / 100 * savingsBalance
       let totalSavings = accountSavings
-      withdrawal += (withdrawal * inflation / 100)
-      withdrawal = incomeRetirementPercent / 100 * withdrawal
+      // withdrawal = incomeRetirementPercent / 100 * withdrawal <-- likely not needed
       let totalBalance = savingsBalance + totalSavings - withdrawal
       let returnObject = {
-        startingSavings: savingsBalance,
+        startingSavings: savingsBalance.toFixed(2),
         age: currentAge,
-        yearlySavings: accountSavings,
-        withdrawal: withdrawal,
-        endingSavings: totalBalance
+        income: totalIncome.toFixed(2),
+        yearlySavings: accountSavings.toFixed(2),
+        withdrawal: withdrawal.toFixed(2),
+        endingSavings: totalBalance.toFixed(2)
       }
 
       finalSavingsArray.push(returnObject)
+      withdrawal += (withdrawal * inflation / 100)
       savingsBalance = totalBalance
       currentAge += 1
     } else {
@@ -67,11 +71,12 @@ const calculator = (calculationOptions) => {
       let totalBalance = savingsBalance + totalSavings
 
       let returnObject = {
-        startingSavings: savingsBalance,
+        startingSavings: savingsBalance.toFixed(2),
         age: currentAge,
-        income: totalIncome,
-        yearlySavings: totalSavings,
-        endingSavings: totalBalance
+        income: totalIncome.toFixed(2),
+        yearlySavings: totalSavings.toFixed(2),
+        withdrawal: withdrawal.toFixed(2),
+        endingSavings: totalBalance.toFixed(2)
       }
 
       finalSavingsArray.push(returnObject)
