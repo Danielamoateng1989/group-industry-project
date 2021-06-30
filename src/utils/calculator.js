@@ -73,7 +73,6 @@ const calculator = (calculationOptions) => {
 
       let accountSavings = postRoi / 100 * savingsBalance
       let totalSavings = accountSavings
-      // withdrawal = incomeRetirementPercent / 100 * withdrawal <-- likely not needed
       let totalBalance = savingsBalance + totalSavings - withdrawal
       let returnObject = {
         startingSavings: savingsBalance.toFixed(2),
@@ -85,7 +84,10 @@ const calculator = (calculationOptions) => {
       }
 
       finalSavingsArray.push(returnObject)
-      withdrawal += (withdrawal * inflation / 100)
+      if(totalBalance > 0 ) {
+        withdrawal += (withdrawal * inflation / 100)
+      } else { 
+        withdrawal = 0 }
       savingsBalance = totalBalance
       currentAge += 1
     } else {
@@ -116,7 +118,7 @@ const calculator = (calculationOptions) => {
 }
 
 console.log(calculator({
-  startAge: 32, income: 75000, spouseIncome: 65000, amountSaved: 50000, retirementAge: 65, yearsRetired: 20, savingsRate: 10, inflation: 4, preRoi: 8, postRoi: 6, incomeRetirementPercent: 80, salaryIncrease: 3
+  startAge: 32, income: 75000, spouseIncome: 65000, amountSaved: 50000, retirementAge: 65, yearsRetired: 20, savingsRate: 10, inflation: 4, preRoi: 8, postRoi: 6, incomeRetirementPercent: 75, salaryIncrease: 3
   }
 ))
 
