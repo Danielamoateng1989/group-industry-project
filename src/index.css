@@ -24,7 +24,8 @@ main {
 
 .button {
   background-color:#E37D03;
-  margin-top: 80px;
+  margin-top: 70px;
+  margin-bottom: 50px;
   font-size: large;
   border-radius: 30px;
   color: white;
