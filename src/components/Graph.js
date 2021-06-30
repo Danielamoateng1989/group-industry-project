@@ -10,11 +10,11 @@ const Graph = () => {
         amountSaved: 50000, 
         retirementAge: 65, 
         yearsRetired: 20, 
-        savingsRate: 15, 
+        savingsRate: 13.5, 
         inflation: 4, 
         preRoi: 8, 
         postRoi: 6, 
-        incomeRetirementPercent: 80, 
+        incomeRetirementPercent: 75, 
         salaryIncrease: 3
         }
     
@@ -25,18 +25,23 @@ const Graph = () => {
 
     const getSavings = formattedData.finalSavingsArray.map(year => year.endingSavings)
 
+    const getWithdrawal = formattedData.finalSavingsArray.map(year => year.withdrawal)
+
     return (
     <>
      <Bar data={{
         labels: getAges,
         datasets: [{
-          label: 'Calculations',
+          label: 'Ending Savings',
           data: getSavings,
           backgroundColor: '#3badee'
-        }]
-      }}>
-
-      </Bar>
+        }, {
+          label: 'Withdrawal',
+          data: getWithdrawal,
+          backgroundColor: '#E37D03'
+        }]
+    }}>
+      </Bar>
       <h1 className="retirementCheck">{ formattedData.retirementCheck }</h1>
     </>
 )
