@@ -84,7 +84,10 @@ const calculator = (calculationOptions) => {
       }
 
       finalSavingsArray.push(returnObject)
-      withdrawal += (withdrawal * inflation / 100)
+      if(totalBalance > 0 ) {
+        withdrawal += (withdrawal * inflation / 100)
+      } else { 
+        withdrawal = 0 }
       savingsBalance = totalBalance
       currentAge += 1
     } else {

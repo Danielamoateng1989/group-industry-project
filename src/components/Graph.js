@@ -14,7 +14,7 @@ const Graph = () => {
         inflation: 4, 
         preRoi: 8, 
         postRoi: 6, 
-        incomeRetirementPercent: 75, 
+        incomeRetirementPercent: 80, 
         salaryIncrease: 3
         }
     
