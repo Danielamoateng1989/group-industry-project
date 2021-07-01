@@ -171,10 +171,11 @@ const updateGraph = (event) => {
         <Col sm={12} md={6} lg={4}>
         <label>Investment Rate (Post-Retirement %)
             <div>
-            <ToolTipLite content="% growth rate of investments after retirement. We suggest a lower growth rate in retirement, as you may want a more conservative style as you grow older" direction="top">
+            <ToolTipLite content="% growth rate of investments after retirement.
+            We suggest a lower growth rate in retirement, 
+            as you may want a more conservative style as you grow older" direction="top" className="explanation" html={true}>
                 <span>
                         <i class="fas fa-question-circle"></i>
-
                 </span>
             </ToolTipLite> 
         </div>
@@ -186,10 +187,9 @@ const updateGraph = (event) => {
         <Col sm={12} md={6} lg={4}>
         <label>Inflation (%)
             <div>
-            <ToolTipLite content="% rate of inflation. Consumer Price Index, has averaged ~4% over the past 50 years or so" direction="top">
+            <ToolTipLite content="% rate of inflation. Consumer Price Index, has averaged ~4% over the past 50 years or so" direction="top" html={true} toolTipClassName="explanation">
                 <span>
                         <i class="fas fa-question-circle"></i>
-
                 </span>
             </ToolTipLite> 
         </div>
