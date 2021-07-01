@@ -22,7 +22,7 @@ main {
   margin-top: 60px;
 }
 
-.button {
+button, .calcButton{
   background-color:#E37D03;
   margin-top: 80px;
   font-size: large;
@@ -32,10 +32,7 @@ main {
   width: 200px;
   height: 50px;
   font-size: large;
-
   
-  
-
 }
 
 
@@ -97,9 +94,47 @@ main {
   font-size: small;
 }
 
+
+span {
+  /* background-color: #63aef7; 
+  color:white; */
+  /* font-size: xx-large;
+  margin-top: 300px; */
+
+}
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;
     display: block;
   }
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+}
+
+
+input, label {
+  display: flex;
+  flex-direction: column;
+
+}
+
+label {
+  font-weight:900;
+  
+}
+
+
+.calcButton {
+  margin:auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
