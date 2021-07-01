@@ -6,8 +6,8 @@ const Header = () => {
   <>
   <div class="nav-left">
   <Container>
-  <a class="active" href="/"><span>Self.</span></a>
-  <a href="/login">Learn</a>
+  <a  href="/"><span>Self.</span></a>
+  <a  href="/login">Learn</a>
   <a href="/about">About</a>
   <a href="/resources">Resources</a>
   <a href="/reward">Get $10</a>
