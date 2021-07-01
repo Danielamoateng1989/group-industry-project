@@ -50,7 +50,7 @@ const updateGraph = (event) => {
         <label>Age
         
          <div className="inline-text">
-            <ToolTipLite content="Your current age" direction="top">
+            <ToolTipLite content="Your current age. If you have a spouse, please use older age amongst the two" direction="top">
                 <span >
                         <i class="fas fa-question-circle"></i>
                </span>
@@ -68,7 +68,7 @@ const updateGraph = (event) => {
          <Col sm={12} md={6} lg={4}>
         <label>Income 
             <div>
-            <ToolTipLite content="Amount saved as of today" direction="top">
+            <ToolTipLite content="Current yearly income" direction="top">
                 <span>
                 <i class="fas fa-question-circle"></i>
 
@@ -82,7 +82,7 @@ const updateGraph = (event) => {
 
         <Col sm={12} md={6} lg={4}>
         <label>Spouse's Income Savings<div>
-            <ToolTipLite content="Spouse's Income" direction="top">
+            <ToolTipLite content="Spouse's current yearly income (if applicable)" direction="top">
                 <span>
                         <i class="fas fa-question-circle"></i>
 
@@ -97,7 +97,7 @@ const updateGraph = (event) => {
 
          <Col sm={12} md={6} lg={4}>
         <label>Amount In Retirement Account <div>
-            <ToolTipLite content="The amount of money in your retirement account" direction="top">
+            <ToolTipLite content="Current balance in retirement accounts (if applicable)" direction="top">
                 <span >
                         <i class="fas fa-question-circle"></i>
 
@@ -112,7 +112,7 @@ const updateGraph = (event) => {
          <Col sm={12} md={6} lg={4}>
         <label>Retirement Age
             <div>
-            <ToolTipLite content="The age you would wish to retire" direction="top">
+            <ToolTipLite content="The age you wish to retire" direction="top">
                 <span>
                         <i class="fas fa-question-circle"></i>
 
@@ -127,7 +127,7 @@ const updateGraph = (event) => {
         <Col sm={12} md={6} lg={4}>
         <label>Desired Retirement Years
             <div>
-            <ToolTipLite content="Number of years your wish to retire" direction="top">
+            <ToolTipLite content="Number of years you wish to remain in retirement" direction="top">
                 <span >
                         <i class="fas fa-question-circle"></i>
 
@@ -142,7 +142,7 @@ const updateGraph = (event) => {
         <Col sm={12} md={6} lg={4}>
         <label>Income Saved (%)
             <div>
-            <ToolTipLite content="Content goes here" direction="top">
+            <ToolTipLite content="% of income saved per year" direction="top">
                 <span >
                         <i class="fas fa-question-circle"></i>
 
@@ -156,7 +156,7 @@ const updateGraph = (event) => {
         <Col sm={12} md={6} lg={4}>
         <label>Investment Rate (Pre-Retirement %)
               <div>
-            <ToolTipLite content="Content goes here" direction="top">
+            <ToolTipLite content="% growth rate of investments before retirement" direction="top">
                 <span >
                         <i class="fas fa-question-circle"></i>
 
@@ -171,10 +171,11 @@ const updateGraph = (event) => {
         <Col sm={12} md={6} lg={4}>
         <label>Investment Rate (Post-Retirement %)
             <div>
-            <ToolTipLite content="Content goes here" direction="top">
+            <ToolTipLite content="% growth rate of investments after retirement.
+            We suggest a lower growth rate in retirement, 
+            as you may want a more conservative style as you grow older" direction="top" className="explanation" html={true}>
                 <span>
                         <i class="fas fa-question-circle"></i>
-
                 </span>
             </ToolTipLite> 
         </div>
@@ -186,10 +187,9 @@ const updateGraph = (event) => {
         <Col sm={12} md={6} lg={4}>
         <label>Inflation (%)
             <div>
-            <ToolTipLite content="Content goes here" direction="top">
+            <ToolTipLite content="% rate of inflation. Consumer Price Index, has averaged ~4% over the past 50 years or so" direction="top" html={true} toolTipClassName="explanation">
                 <span>
                         <i class="fas fa-question-circle"></i>
-
                 </span>
             </ToolTipLite> 
         </div>
@@ -201,7 +201,7 @@ const updateGraph = (event) => {
         <Col sm={12} md={6} lg={4}>
         <label>Income at Retirement (%)
             <div>
-            <ToolTipLite content="Amount of money at retirement" direction="top">
+            <ToolTipLite content="% of final year's income you will need each year in retirement. Common estimate is 80%" direction="top">
                 <span>
                         <i class="fas fa-question-circle"></i>
 
@@ -215,7 +215,7 @@ const updateGraph = (event) => {
         <Col sm={12} md={6} lg={4}>
         <label>Salary Increase (%)
             <div>
-            <ToolTipLite content="Your salary increase" direction="top">
+            <ToolTipLite content="% of salary increase per year. Defaults to 3%" direction="top">
                 <span>
                         <i class="fas fa-question-circle"></i>
 

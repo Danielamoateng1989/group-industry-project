@@ -131,22 +131,20 @@ label {
   
 }
 
-
 .calcButton {
   margin:auto;
   margin-bottom: 40px;
   margin-top: 40px;
 }
 
-
 h1 {
   text-transform: capitalize;
 }
 
-
- i {
+i {
    color:#63AEF7;
    font-size: 22px;
- }
+}
+
 
  
