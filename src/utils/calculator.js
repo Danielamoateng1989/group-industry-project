@@ -11,32 +11,60 @@ const canRetire = (calculationOptions, arr) => {
     preRoi,
     postRoi,
     incomeRetirementPercent,
-    salaryIncrease
+    salaryIncrease,
+    enoughMoneyToRetire = "You are currently saving enough money for retirement",
+    notEnoughMoneyToRetire ="You are not currently saving enough for retirement. Please try to increase your savings amount"
     } = calculationOptions
+   
+
+    //Recommendation styling
+    const notEnoughMoneyStyle = {
+      color: "#E37D03",
+      padding: "10px",
+      fontFamily: "Monaco",
+      borderRadius: "10px",
+      marginTop: "30px",
+      border: "1px solid",
+      textAlign: "center"
+    };
+    const enoughMoneyStyle = {
+      color: "#3BADEE",
+      padding: "10px",
+      fontFamily: "",
+      border: "1px solid",
+      borderRadius: "10px",
+      marginTop: "30px",
+      textAlign: "center"
+
+
+    };
+
+
+  //#3BADEE blue #E37D03 orange
 
   if (retirementAge + yearsRetired >= arr[retirementAge + yearsRetired - startAge - 1].age && arr[retirementAge + yearsRetired - startAge - 1].endingSavings >= 0) {
-    return "you are currently saving enough money for retirement"
+    return <p style={enoughMoneyStyle}>{enoughMoneyToRetire}</p>
   } else {
-    return "you are not currently saving enough for retirement. Please try to increase your savings amount"
+    return <p style={notEnoughMoneyStyle}>{notEnoughMoneyToRetire}</p>
   }
   
 }
 
 const calculator = (calculationOptions) => {
-  const { 
-    startAge, 
-    income, 
-    spouseIncome, 
-    amountSaved, 
-    retirementAge, 
-    yearsRetired, 
-    savingsRate,
-    inflation,
-    preRoi,
-    postRoi,
-    incomeRetirementPercent,
-    salaryIncrease
-    } = calculationOptions
+
+  let startAge = parseFloat(calculationOptions.startAge)
+  let income = parseFloat(calculationOptions.income)
+  let spouseIncome = parseFloat(calculationOptions.spouseIncome)
+  let amountSaved = parseFloat(calculationOptions.amountSaved)
+  let retirementAge = parseFloat(calculationOptions.retirementAge)
+  let yearsRetired = parseFloat(calculationOptions.yearsRetired)
+  let savingsRate = parseFloat(calculationOptions.savingsRate)
+  let inflation = parseFloat(calculationOptions.inflation)
+  let preRoi = parseFloat(calculationOptions.preRoi)
+  let postRoi = parseFloat(calculationOptions.postRoi)
+  let incomeRetirementPercent = parseFloat(calculationOptions.incomeRetirementPercent)
+  let salaryIncrease = parseFloat(calculationOptions.salaryIncrease)
+  
 
   const finalSavingsArray = []
   let currentAge = startAge;
@@ -118,7 +146,7 @@ const calculator = (calculationOptions) => {
 }
 
 console.log(calculator({
-  startAge: 32, income: 75000, spouseIncome: 65000, amountSaved: 50000, retirementAge: 65, yearsRetired: 20, savingsRate: 10, inflation: 4, preRoi: 8, postRoi: 6, incomeRetirementPercent: 75, salaryIncrease: 3
+  startAge: 32, income: 75000, spouseIncome: 65000, amountSaved: 50000, retirementAge: 65, yearsRetired: 20, savingsRate: 20, inflation: 4, preRoi: 8, postRoi: 6, incomeRetirementPercent: 75, salaryIncrease: 3
   }
 ))
 

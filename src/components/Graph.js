@@ -1,5 +1,6 @@
 
 import { Bar } from "react-chartjs-2"
+<<<<<<< HEAD
 import calculator from '../utils/calculator'
 
 const Graph = () => {
@@ -17,15 +18,35 @@ const Graph = () => {
         incomeRetirementPercent: 80, 
         salaryIncrease: 3
         }
+=======
+
+const Graph = (props) => {
     
-    const formattedData = calculator(dummyData)
+        
+>>>>>>> a38180fece4883d95a8722f8b8c12817b3f43122
+    
+    const formattedData = props.data
+
+
     console.log(formattedData)
+    if(formattedData.length === 0){
+        return (
+            <>
+         
+
+
+            
+            </>
+        )
+
+    }
 
     const getAges = formattedData.finalSavingsArray.map(year => year.age)
 
     const getSavings = formattedData.finalSavingsArray.map(year => year.endingSavings)
 
     const getWithdrawal = formattedData.finalSavingsArray.map(year => year.withdrawal)
+
 
     return (
     <>
@@ -43,6 +64,7 @@ const Graph = () => {
     }}>
       </Bar>
       <h1 className="retirementCheck">{ formattedData.retirementCheck }</h1>
+      
     </>
 )
 
