@@ -12,9 +12,6 @@ const Header = () => {
   <a href="/resources">Resources</a>
   <a href="/reward">Get $10</a>
   <a href="/help">Help</a>
-
-  
- 
   </Container>
   
   
@@ -25,12 +22,6 @@ const Header = () => {
   </div>
   </Container>
   </>
-
-  
-
- 
-
-
 
     )
 }

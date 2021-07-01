@@ -12,10 +12,6 @@ const Graph = (props) => {
     if(formattedData.length === 0){
         return (
             <>
-         
-
-
-            
             </>
         )
 
@@ -40,7 +36,10 @@ const Graph = (props) => {
           label: 'Withdrawal',
           data: getWithdrawal,
           backgroundColor: '#E37D03'
-        }]
+    
+        }
+       ],
+    
     }}>
       </Bar>
       <h1 className="retirementCheck">{ formattedData.retirementCheck }</h1>

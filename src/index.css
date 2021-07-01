@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 
 body {
   margin: 0;
   /* font-family: 'Poppins', sans-serif; */
-
-
-
 }
 
 code {
@@ -111,12 +108,14 @@ span {
 
 input {
     background: transparent;
-    border: none;
-    border-bottom: 1px solid #000000;
+    border: 1 solid;
+    border-bottom: 0.50px solid #000000;
     text-align: center;
     width: 200px;
     margin: 0 auto;
     margin-bottom: 20px;
+    border-radius: 4px;
+    border-color:lightgray;
 
 }
 
@@ -138,3 +137,16 @@ label {
   margin-bottom: 40px;
   margin-top: 40px;
 }
+
+
+h1 {
+  text-transform: capitalize;
+}
+
+
+ i {
+   color:#63AEF7;
+   font-size: 22px;
+ }
+
+ 
