@@ -10,7 +10,7 @@ const Graph = () => {
         amountSaved: 50000, 
         retirementAge: 65, 
         yearsRetired: 20, 
-        savingsRate: 13.5, 
+        savingsRate: 20, 
         inflation: 4, 
         preRoi: 8, 
         postRoi: 6, 
