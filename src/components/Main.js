@@ -47,22 +47,20 @@ const updateGraph = (event) => {
 
        <Row>
         <Col sm={12} md={6} lg={4}>
-        <label for="ageInput" className="mr-5">
+    
+          <ToolTipLite content={(
+            <div>
+              <p>Your current age.</p>
+              <p>If you have a spouse,</p>
+              <p>please use older age amongst the two</p>
+            </div>
+          )}
+            direction="right">
+            <label for="ageInput" className="pr-5 mt-2">
             Age
-            <ToolTipLite content={(
-                <pre>
-                  Your current age.
-                  If you have a spouse, 
-                  please use older age amongst the two
-                </pre>
-            )}
-                direction="top">
-            <span>
-              <i className="fas fa-question-circle ml-5"></i>
-            </span>
-            </ToolTipLite>
-        </label>
-        <input  value={calcOptions.startAge} onChange={event => setCalcOptions({...calcOptions, startAge: event.target.value})} id="ageInput"></input>
+            </label>
+          </ToolTipLite>
+          <input  value={calcOptions.startAge} onChange={event => setCalcOptions({...calcOptions, startAge: event.target.value})} id="ageInput"></input>
         
         </Col>
    
