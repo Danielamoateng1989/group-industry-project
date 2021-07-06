@@ -44,22 +44,28 @@ const updateGraph = (event) => {
             <h1 className="content">Retirement Calculator</h1>
             <p className="App">Estimate your expected total retirement savings based on your annual contributions</p>
        </Row>
-       <Row>
-        
-        <Col sm={12} md={6} lg={4}>
-        <label>Age
-        
-         <div className="inline-text">
-            <ToolTipLite content="Your current age. If you have a spouse, please use older age amongst the two" direction="top">
-                <span >
-                        <i class="fas fa-question-circle"></i>
-               </span>
-            </ToolTipLite> 
-        </div>
-        <input  value={calcOptions.startAge} onChange={event => setCalcOptions({...calcOptions, startAge: event.target.value})} ></input>
-        </label>
-        </Col>
 
+       <Row>
+        <Col sm={12} md={6} lg={4}>
+        <label for="ageInput" className="mr-5">
+            Age
+            <ToolTipLite content={(
+                <pre>
+                  Your current age.
+                  If you have a spouse, 
+                  please use older age amongst the two
+                </pre>
+            )}
+                direction="top">
+            <span>
+              <i className="fas fa-question-circle ml-5"></i>
+            </span>
+            </ToolTipLite>
+        </label>
+        <input  value={calcOptions.startAge} onChange={event => setCalcOptions({...calcOptions, startAge: event.target.value})} id="ageInput"></input>
+        
+        </Col>
+   
 
 
 

@@ -119,16 +119,13 @@ input {
 
 }
 
-
-input, label {
+input {
   display: flex;
   flex-direction: column;
-
 }
 
 label {
   font-weight:900;
-  
 }
 
 .calcButton {
@@ -145,6 +142,7 @@ i {
    color:#63AEF7;
    font-size: 22px;
 }
+
 
 
  
