@@ -2,6 +2,7 @@ const canRetire = (calculationOptions, arr) => {
 
   const enoughMoneyToRetire = "You are currently saving enough money for retirement"
   const notEnoughMoneyToRetire = "You are not currently saving enough for retirement. Please try to add to your retirement account or increase your savings rate"
+  const error = "Please update your inputs to have a retirement age > age"
   const startAge = parseInt(calculationOptions.startAge)
   const retirementAge = parseInt(calculationOptions.retirementAge)
   const yearsRetired = parseInt(calculationOptions.yearsRetired)
@@ -28,11 +29,22 @@ const canRetire = (calculationOptions, arr) => {
 
 
     };
+    const errorStyle = {
+      color: "#000",
+      padding: "10px",
+      fontFamily: "Monaco",
+      borderRadius: "10px",
+      marginTop: "30px",
+      border: "1px solid",
+      textAlign: "center"
+    };
 
 
   //#3BADEE blue #E37D03 orange
 
-  if (retirementAge + yearsRetired >= arr[retirementAge + yearsRetired - startAge - 1].age && arr[retirementAge + yearsRetired - startAge - 1].endingSavings >= 0) {
+  if (retirementAge <= startAge) {
+    return <p style={errorStyle}>{error}</p>
+  } else if (retirementAge + yearsRetired >= arr[retirementAge + yearsRetired - startAge - 1].age && arr[retirementAge + yearsRetired - startAge - 1].endingSavings >= 0) {
     return <p style={enoughMoneyStyle}>{enoughMoneyToRetire}</p>
   } else {
     return <p style={notEnoughMoneyStyle}>{notEnoughMoneyToRetire}</p>
