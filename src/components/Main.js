@@ -44,192 +44,135 @@ const updateGraph = (event) => {
             <h1 className="content">Retirement Calculator</h1>
             <p className="App">Estimate your expected total retirement savings based on your annual contributions</p>
        </Row>
+
        <Row>
+        <Col sm={12} md={6} lg={4}>
+          <ToolTipLite content={(
+            <div>
+              <p>Your current age.</p>
+              <p>If you have a spouse,</p>
+              <p>please use older age amongst the two</p>
+            </div>
+          )}
+            direction="top">
+            <label for="ageInput" className="pr-5 mt-2">
+            Age
+            </label>
+          </ToolTipLite>
+          <input  value={calcOptions.startAge} onChange={event => setCalcOptions({...calcOptions, startAge: event.target.value})} id="ageInput"></input>
+        
+        </Col>
         
         <Col sm={12} md={6} lg={4}>
-        <label>Age
-        
-         <div className="inline-text">
-            <ToolTipLite content="Your current age. If you have a spouse, please use older age amongst the two" direction="top">
-                <span >
-                        <i class="fas fa-question-circle"></i>
-               </span>
-            </ToolTipLite> 
-        </div>
-        <input  value={calcOptions.startAge} onChange={event => setCalcOptions({...calcOptions, startAge: event.target.value})} ></input>
-        </label>
-        </Col>
-
-
-
-
-
-
-         <Col sm={12} md={6} lg={4}>
-        <label>Income 
-            <div>
-            <ToolTipLite content="Current yearly income" direction="top">
-                <span>
-                <i class="fas fa-question-circle"></i>
-
-                </span>
-            </ToolTipLite> 
-        </div>
-        <input value={calcOptions.income} onChange={event => setCalcOptions({...calcOptions, income: event.target.value})} ></input>
-        </label>
+          <ToolTipLite content="Current yearly income" direction="top">
+            <label for="incomeInput" className="pr-5 mt-2">Income</label>
+          </ToolTipLite> 
+        <input value={calcOptions.income} onChange={event => setCalcOptions({...calcOptions, income: event.target.value})} id="incomeInput"></input>
        </Col>
 
 
         <Col sm={12} md={6} lg={4}>
-        <label>Spouse's Income Savings<div>
-            <ToolTipLite content="Spouse's current yearly income (if applicable)" direction="top">
-                <span>
-                        <i class="fas fa-question-circle"></i>
-
-                </span>
-            </ToolTipLite> 
-        </div>    
-        <input  value={calcOptions.spouseIncome} onChange={event => setCalcOptions({...calcOptions, spouseIncome: event.target.value})} ></input>
-        </label>
+          <ToolTipLite content="Spouse's current yearly income (if applicable)" direction="top">
+            <label for="spouseIncome" className="pr-5 mt-2">Spouse's Income Savings</label>
+          </ToolTipLite>    
+          <input  value={calcOptions.spouseIncome} onChange={event => setCalcOptions({...calcOptions, spouseIncome: event.target.value})} id="spouseIncome"></input>
         </Col>
 
-
-
-         <Col sm={12} md={6} lg={4}>
-        <label>Amount In Retirement Account <div>
-            <ToolTipLite content="Current balance in retirement accounts (if applicable)" direction="top">
-                <span >
-                        <i class="fas fa-question-circle"></i>
-
-                </span>
-            </ToolTipLite> 
-        </div>
-        <input value={calcOptions.amountSaved} onChange={event => setCalcOptions({...calcOptions, amountSaved: event.target.value})} ></input>
-        </label>
+        <Col sm={12} md={6} lg={4}>
+          <ToolTipLite content="Current balance in retirement accounts (if applicable)" direction="top">
+            <label for="accountBalance" className="pr-5 mt-2">Amount In Retirement Account </label>
+          </ToolTipLite> 
+        <input value={calcOptions.amountSaved} onChange={event => setCalcOptions({...calcOptions, amountSaved: event.target.value})} id="accountBalance"></input>
         </Col>
 
+        <Col sm={12} md={6} lg={4}>
+          <ToolTipLite content="The age you wish to retire" direction="top">
+            <label for="retireAge" className="pr-5 mt-2">Retirement Age</label>
+          </ToolTipLite> 
+          <input value={calcOptions.retirementAge} onChange={event => setCalcOptions({...calcOptions, retirementAge: event.target.value})} id="retireAge"></input>
+        </Col>
 
-         <Col sm={12} md={6} lg={4}>
-        <label>Retirement Age
-            <div>
-            <ToolTipLite content="The age you wish to retire" direction="top">
-                <span>
-                        <i class="fas fa-question-circle"></i>
-
-                </span>
-            </ToolTipLite> 
-        </div>
-        <input value={calcOptions.retirementAge} onChange={event => setCalcOptions({...calcOptions, retirementAge: event.target.value})} ></input>
-        </label>
+        <Col sm={12} md={6} lg={4}>
+          <ToolTipLite content="Number of years you wish to remain in retirement" direction="top">
+            <label for="retireYears" className="pr-5 mt-2">Desired Retirement Years</label>
+          </ToolTipLite> 
+          <input value={calcOptions.yearsRetired} onChange={event => setCalcOptions({...calcOptions, yearsRetired: event.target.value})} id="retireYears"></input>
         </Col>
 
 
         <Col sm={12} md={6} lg={4}>
-        <label>Desired Retirement Years
-            <div>
-            <ToolTipLite content="Number of years you wish to remain in retirement" direction="top">
-                <span >
-                        <i class="fas fa-question-circle"></i>
-
-                </span>
-            </ToolTipLite> 
-        </div>
-        <input value={calcOptions.yearsRetired} onChange={event => setCalcOptions({...calcOptions, yearsRetired: event.target.value})} ></input>
-        </label>
-        </Col>
-
-
-        <Col sm={12} md={6} lg={4}>
-        <label>Income Saved (%)
-            <div>
-            <ToolTipLite content="% of income saved per year" direction="top">
-                <span >
-                        <i class="fas fa-question-circle"></i>
-
-                </span>
-            </ToolTipLite> 
-        </div>
-        <input value={calcOptions.savingsRate} onChange={event => setCalcOptions({...calcOptions, savingsRate: event.target.value})} ></input>
-        </label>
+          <ToolTipLite content="% of income saved per year" direction="top">
+            <label for="savingsPercent" className="pr-5 mt-2">Income Saved (%) </label>
+          </ToolTipLite> 
+          <input value={calcOptions.savingsRate} onChange={event => setCalcOptions({...calcOptions, savingsRate: event.target.value})} id="savingsPercent"></input>
         </Col>
 
         <Col sm={12} md={6} lg={4}>
-        <label>Investment Rate (Pre-Retirement %)
-              <div>
             <ToolTipLite content="% growth rate of investments before retirement" direction="top">
-                <span >
-                        <i class="fas fa-question-circle"></i>
-
-                </span>
+              <label for="preRoi" className="pr-5 mt-2">Investment Rate (Pre-Retirement %)</label>
             </ToolTipLite> 
-        </div>
-        <input value={calcOptions.preRoi} onChange={event => setCalcOptions({...calcOptions, preRoi: event.target.value})} ></input>
-        </label>
+        <input value={calcOptions.preRoi} onChange={event => setCalcOptions({...calcOptions, preRoi: event.target.value})} id="preRoi"></input>
         </Col>
 
 
         <Col sm={12} md={6} lg={4}>
-        <label>Investment Rate (Post-Retirement %)
+          <ToolTipLite content={(
             <div>
-            <ToolTipLite content="% growth rate of investments after retirement.
-            We suggest a lower growth rate in retirement, 
-            as you may want a more conservative style as you grow older" direction="top" className="explanation" html={true}>
-                <span>
-                        <i class="fas fa-question-circle"></i>
-                </span>
-            </ToolTipLite> 
-        </div>
-        <input value={calcOptions.postRoi} onChange={event => setCalcOptions({...calcOptions, postRoi: event.target.value})} ></input>
-        </label>
+              <p>% growth rate of investments after retirement.</p>
+              <p>We suggest a lower growth rate in retirement, </p>
+              <p>as you may want a more conservative style as you grow older"</p>
+            </div>
+          )}
+            direction="top" className="explanation" html={true}>
+          <label for="postRoi" className="pr-5 mt-2">Investment Rate (Post-Retirement %)</label>
+          </ToolTipLite> 
+          <input value={calcOptions.postRoi} onChange={event => setCalcOptions({...calcOptions, postRoi: event.target.value})} id="postRoi"></input>
         </Col>
 
 
         <Col sm={12} md={6} lg={4}>
-        <label>Inflation (%)
+          <ToolTipLite content={(
             <div>
-            <ToolTipLite content="% rate of inflation. Consumer Price Index, has averaged ~4% over the past 50 years or so" direction="top" html={true} toolTipClassName="explanation">
-                <span>
-                        <i class="fas fa-question-circle"></i>
-                </span>
-            </ToolTipLite> 
-        </div>
-        <input value={calcOptions.inflation} onChange={event => setCalcOptions({...calcOptions, inflation: event.target.value})} ></input>
-        </label>
+              <p>% rate of inflation. Consumer Price Index</p>
+              <p>has averaged ~4% over the past 50 years or so</p>
+            </div>
+          )}
+            direction="top" html={true} toolTipClassName="explanation">
+          <label for="inflation" className="pr-5 mt-2">Inflation (%)</label>
+          </ToolTipLite> 
+          <input value={calcOptions.inflation} onChange={event => setCalcOptions({...calcOptions, inflation: event.target.value})} id="inflation"></input>
         </Col>
 
 
         <Col sm={12} md={6} lg={4}>
-        <label>Income at Retirement (%)
-            <div>
-            <ToolTipLite content="% of final year's income you will need each year in retirement. Common estimate is 80%" direction="top">
-                <span>
-                        <i class="fas fa-question-circle"></i>
-
-                </span>
-            </ToolTipLite> 
-        </div>
-        <input value={calcOptions.incomeRetirementPercent} onChange={event => setCalcOptions({...calcOptions, incomeRetirementPercent: event.target.value})} ></input>
-        </label>
+          <ToolTipLite content={(
+              <div>
+                  <p>% of final year's income you will need each year in retirement</p>
+                  <p>Common estimate is 80%</p>
+              </div>
+          )}
+          direction="top">
+          <label for="withdrawal" className="pr-5 mt-2">Income at Retirement (%)</label>
+          </ToolTipLite> 
+          <input value={calcOptions.incomeRetirementPercent} onChange={event => setCalcOptions({...calcOptions, incomeRetirementPercent: event.target.value})} id="withdrawal"></input>
         </Col>
 
         <Col sm={12} md={6} lg={4}>
-        <label>Salary Increase (%)
-            <div>
-            <ToolTipLite content="% of salary increase per year. Defaults to 3%" direction="top">
-                <span>
-                        <i class="fas fa-question-circle"></i>
-
-                </span>
-            </ToolTipLite> 
-        </div>
-        <input value={calcOptions.salaryIncrease} onChange={event => setCalcOptions({...calcOptions, salaryIncrease: event.target.value})} ></input>
-        </label>
+          <ToolTipLite content={(
+              <div>
+                  <p>% of salary increase per year.</p>
+                  <p>Defaults to 3%</p>
+              </div>
+          )} 
+          direction="top">
+            <label for="salaryIncrease" className="pr-5 mt-2">Salary Increase (%)</label>
+          </ToolTipLite> 
+          <input value={calcOptions.salaryIncrease} onChange={event => setCalcOptions({...calcOptions, salaryIncrease: event.target.value})} id="salaryIncrease"></input>
         </Col>
         </Row>
         
         
-         <Row>
-
+        <Row>
         <button className="calcButton" onClick={updateGraph}>Calculate</button>
         </Row>
         </Container>
