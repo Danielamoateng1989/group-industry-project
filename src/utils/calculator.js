@@ -1,20 +1,10 @@
 const canRetire = (calculationOptions, arr) => {
-  const { 
-    startAge, 
-    income, 
-    spouseIncome, 
-    amountSaved, 
-    retirementAge, 
-    yearsRetired, 
-    savingsRate,
-    inflation,
-    preRoi,
-    postRoi,
-    incomeRetirementPercent,
-    salaryIncrease,
-    enoughMoneyToRetire = "You are currently saving enough money for retirement",
-    notEnoughMoneyToRetire ="You are not currently saving enough for retirement. Please try to increase your savings amount"
-    } = calculationOptions
+
+  const enoughMoneyToRetire = "You are currently saving enough money for retirement"
+  const notEnoughMoneyToRetire = "You are not currently saving enough for retirement. Please try to add to your retirement account or increase your savings rate"
+  const startAge = parseInt(calculationOptions.startAge)
+  const retirementAge = parseInt(calculationOptions.retirementAge)
+  const yearsRetired = parseInt(calculationOptions.yearsRetired)
    
 
     //Recommendation styling
